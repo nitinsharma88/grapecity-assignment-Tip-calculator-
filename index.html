@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Tip calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="bill-calculator">
+        <h1>Bill calculator</h1>
+        <form name="calculator" id="calculator">
+          <div class="field-container">
+            <label for="bill">How much was your bill(₹)</label>
+            <input id="bill" name="bill" placeholder="₹" required
+                type="number"
+                min="1"             
+                (input)="funcCall()" -- Optional
+                oninput="value == '' ? value = 0 : value < 0 ? value = value * -1 : false"
+                formControlName="RateQty"
+                [(value)]="some.variable" -- Optional
+              />
+            
+          </div>
+          <div class="field-container">
+            <label for="percentage">Tip amount(%)</label>
+            <input id="percentage" type="number" name="percentage" placeholder="%" max="100"></input>
+          </div>    
+          <div class="field-container">
+            <label for="customer-num">Number to spilt</label>
+            <input id="customer-num" type="number" name="customer-num" placeholder="1"  value="1" min="1"></input>
+          </div>
+          <div class="button-container">
+            <button type="submit" name= "calculate" id="btn-calc">Calculate</button>
+            <button type="reset" name= "reset" id="btn-calc">Reset</button>
+          </div>
+        </form>
+      </div>
+      <div id="result-container">
+        <h1>Your bill comes to</h1>
+        <form name="results" id="results">
+          <div class="field-container">
+            <label for="total-bill">Total bill per person</label>
+            <input id="total-bill" type="number" name="bill" placeholder="0" disabled></input>
+          </div>
+          <div class="field-container">
+            <label for="total-percentage">Total Tip</label>
+            <input id="total-percentage" type="number" name="percentage" placeholder="0">
+          </div>
+          <div class="field-container">
+            <label for="total-per-customer">Tip per person</label>
+            <input id="total-per-customer" type="number" name="customer" placeholder="0">
+
+          </div>
+
+  
+        </form>
+      </div>
+    </div>
+
+    <script src=script.js></script>
+  </body>
+</html>
